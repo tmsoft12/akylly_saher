@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="tk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awtopark Dolandyryşy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- Icon kütüphanesi -->
+
+    <style>
+        .plate {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            font-weight: bold;
+            font-size: 22px;
+            width: 250px;
+            height: 60px;
+            border-radius: 8px;
+            border: 2px solid #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .plate-number {
+            margin-left: 8px;
+            font-size: 24px;
+            color: #0084ff;
+        }
+
+        .plate-region {
+            margin-right: 8px;
+            font-size: 24px;
+            color: #ff6600;
+        }
+
+        .plate-format {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .time-box {
+            display: flex;
+            flex-direction: column;
+            padding: 10px 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .time-box span {
+            font-size: 14px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .time-box .time {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* Giriş Zamanı Rengi */
+        .time-box-entry {
+            background-color: #e0f7fa;
+            /* Mavi tonunda */
+            border-left: 4px solid #00bcd4;
+            /* Mavi renk sol kenarda */
+        }
+
+        /* Çıkış Zamanı Rengi */
+        .time-box-exit {
+            background-color: #ffecb3;
+            /* Sarı tonunda */
+            border-left: 4px solid #ff9800;
+            /* Turuncu renk sol kenarda */
+        }
+    </style>
+</head>
+
+<body class="flex h-screen bg-gray-100">
+
+    <!-- Sidebar -->
+    <div class="flex flex-col w-64 h-full bg-gray-800 text-white">
+        <div class="flex items-center justify-center h-20 bg-gray-900">
+            <h1 class="text-xl font-bold">Awtopark Dolandyryşy</h1>
+        </div>
+
+        <nav class="flex flex-col flex-1 p-4 space-y-2">
+            <a href="#" class="flex items-center px-4 py-2 text-gray-200 bg-gray-700 rounded-md hover:bg-gray-600">
+                <span class="material-icons">dashboard</span>
+                <span class="ml-3">Esasy Sahypa</span>
+            </a>
+            <a href="#"
+                class="flex items-center px-4 py-2 text-gray-400 rounded-md hover:text-gray-200 hover:bg-gray-700">
+                <span class="material-icons">settings</span>
+                <span class="ml-3">Sazlamalar</span>
+            </a>
+            <a href="#"
+                class="flex items-center px-4 py-2 text-gray-400 rounded-md hover:text-gray-200 hover:bg-gray-700">
+                <span class="material-icons">folder</span>
+                <span class="ml-3">Şahsylar</span>
+            </a>
+            <a href="#"
+                class="flex items-center px-4 py-2 text-gray-400 rounded-md hover:text-gray-200 hover:bg-gray-700">
+                <span class="material-icons">logout</span>
+                <span class="ml-3">Çykmak</span>
+            </a>
+        </nav>
+
+        <div class="p-4 bg-gray-900">
+            <p class="text-sm text-center text-gray-500">© 2024 Awtopark Dolandyryşy</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 p-6 space-y-6">
+        <header class="flex items-center justify-between">
+            <h1 class="text-3xl font-bold text-gray-800">Geçmiş Girişler</h1>
+        </header>
+
+        <!-- Statistics Cards -->
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="p-6 bg-white rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold text-gray-800">Ulanyjylar</h2>
+                <p class="mt-2 text-3xl font-bold text-blue-600">1,245</p>
+                <p class="mt-1 text-sm text-gray-500">Toplam kayıtlı ulanyjylar</p>
+            </div>
+            <div class="p-6 bg-white rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold text-gray-800">Satyşlar</h2>
+                <p class="mt-2 text-3xl font-bold text-green-600">$12,450</p>
+                <p class="mt-1 text-sm text-gray-500">Bu aýyň jemi girdeji</p>
+            </div>
+            <div class="p-6 bg-white rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold text-gray-800">Sargytlar</h2>
+                <p class="mt-2 text-3xl font-bold text-yellow-600">320</p>
+                <p class="mt-1 text-sm text-gray-500">Bu hepde tamamlanan sargytlar</p>
+            </div>
+            <div class="p-6 bg-white rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold text-gray-800">Teswirler</h2>
+                <p class="mt-2 text-3xl font-bold text-red-600">89</p>
+                <p class="mt-1 text-sm text-gray-500">Cevap berilmeli teswirler</p>
+            </div>
+        </div>
+
+        <!-- Geçmiş Girişler Tablosu -->
+        <div class="p-6 bg-white rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold text-gray-800">Geçmiş Girişler</h2>
+            <table class="w-full mt-4 text-left table-auto">
+                <thead>
+                    <tr class="border-b">
+                        <th class="px-4 py-2 text-gray-600">Ulag Belgisi</th>
+                        <th class="px-4 py-2 text-gray-600">Giriş Zamany</th>
+                        <th class="px-4 py-2 text-gray-600">Çykmak Zamany</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b">
+                        <td class="px-4 py-2 text-gray-800">
+                            <div class="plate">
+                                <span class="plate-format">AB1122BC</span>
+                            </div>
+                        </td>
+                        <td class="px-4 py-2">
+                            <div class="time-box time-box-entry">
+                                <span class="time">2024-11-20 08:30</span>
+                            </div>
+                        </td>
+                        <td class="px-4 py-2">
+                            <div class="time-box time-box-exit">
+                                <span class="time">2024-11-20 10:00</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="px-4 py-2 text-gray-800">
+                            <div class="plate">
+                                <span class="plate-format">CD3344DE</span>
+                            </div>
+                        </td>
+                        <td class="px-4 py-2">
+                            <div class="time-box time-box-entry">
+                                <span class="time">2024-11-20 09:00</span>
+                            </div>
+                        </td>
+                        <td class="px-4 py-2">
+                            <div class="time-box time-box-exit">
+                                <span class="time">2024-11-20 11:30</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="px-4 py-2 text-gray-800">
+                            <div class="plate">
+                                <span class="plate-format">EF5566GH</span>
+                            </div>
+                        </td>
+                        <td class="px-4 py-2">
+                            <div class="time-box time-box-entry">
+                                <span class="time">2024-11-20 07:45</span>
+                            </div>
+                        </td>
+                        <td class="px-4 py-2">
+                            <div class="time-box time-box-exit">
+                                <span class="time">2024-11-20 09:15</span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.plate {
+    @apply flex justify-center items-center font-sans bg-gray-100 text-gray-800 font-bold text-2xl w-[200px] h-[60px] rounded-lg border-2 border-gray-800 shadow;
+}
+
+.plate-format {
+    @apply text-2xl font-bold;
+}
+
+.time-box {
+    @apply flex flex-col p-3 rounded shadow;
+}
+
+.time-box span {
+    @apply text-sm font-medium text-gray-600;
+}
+
+.time-box .time {
+    @apply text-base font-semibold text-gray-800;
+}
+
+.time-box-entry {
+    @apply bg-cyan-50 border-l-4 border-cyan-500;
+}
+
+.time-box-exit {
+    @apply bg-amber-50 border-l-4 border-orange-500;
+}
