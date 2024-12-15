@@ -19,7 +19,7 @@
     let socket: WebSocket;
 
     const connect = () => {
-      socket = new WebSocket("ws://192.168.0.104:3000/ws/plate");
+      socket = new WebSocket("ws://192.168.0.103:3000/ws/plate");
 
       socket.onopen = () => {
         console.log("WebSocket bağlantısı başarılı.");

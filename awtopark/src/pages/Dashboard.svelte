@@ -51,7 +51,7 @@
     };
 
     onMount(() => {
-        const ws = new WebSocket("ws://192.168.0.104:3000/ws/dashboard");
+        const ws = new WebSocket("ws://192.168.0.103:3000/ws/dashboard");
 
         ws.onmessage = (event) => {
             const data = JSON.parse(event.data);
